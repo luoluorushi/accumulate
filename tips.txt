@@ -1,0 +1,4 @@
+1、环境变量带空格，在空格前面增加反斜杠/
+2、编译整个文件夹命令:find src -name *.java > souces.list; javac @souces.list
+3、jar命令，显示包内容 jar tvf test.jar。 打包文件夹到jar包 jar cvf src/
+4、环境变量，在前面增加$，在~/.bash_profile设置，之后source ~/.bash_profile

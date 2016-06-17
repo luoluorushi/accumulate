@@ -1,0 +1,2 @@
+1、chmod 777 xx.txt修改文件访问属性，rwx  owner，group，other
+

@@ -1,0 +1,19 @@
+一、设置github的ssh连接
+1、在~/.ssh目录下，备份原有文件
+2、ssh-keygen -t rsa -C "xx@xx.com" //一路回车，无需设置密码
+3、增加ssh key到ssh-agent， 确保ssh-agent开启, eval "$(ssh-agent -s)"
+	增加ssh-add ~/.ssh/id_rsa
+4、拷贝id_rsa.pub文件内容，可以使用命令pbcopy < ~/.ssh/id_rsa.pub,
+	在github账户设置，ssh keys增加sshkey
+5、ssh -T git@github.com尝试连接 //公司网络无法连上
+6、如果连接失败，可能是22端口被封，在.ssh目录新建config文件，内容如下
+	User xx@xx.com
+	Port 443
+	Hostname ssh.github.com
+	之后运行命令 git config --global user.email "xx@xx.com"
+二、关联本地仓库到github
+1、在github新建一个仓库
+2、在代码目录运行git remote add origin git@github.com:luoluorushi/accumulate.git
+3、git push -u origin master 这一步与github通信，前面一步应该只是本地设置
+	使用-u参数，是本地master分支与远程master分支关联
+4、之后推送无需再加-u git push -u origin master

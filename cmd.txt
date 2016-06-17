@@ -1,2 +1,4 @@
 1、chmod 777 xx.txt修改文件访问属性，rwx  owner，group，other
-
+2、复制文件内容到粘贴板 pbcopy < ~/.ssh/id_rsa.pub
+3、rm file删除文件， -f file强行删除，系统不提示。 -rf dir 删除整个目录
+	rm -f *.log删除所有log文件

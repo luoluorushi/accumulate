@@ -16,4 +16,4 @@
 2、在代码目录运行git remote add origin git@github.com:luoluorushi/accumulate.git
 3、git push -u origin master 这一步与github通信，前面一步应该只是本地设置
 	使用-u参数，是本地master分支与远程master分支关联
-4、之后推送无需再加-u git push -u origin master
+4、之后推送无需再加-u git push origin master

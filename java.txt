@@ -1,0 +1,5 @@
+命令行打包android jar包文件：
+1、将要编译的所有javac文件输入到sources.list find src -name *.java > sources.list
+2、javac编译命令, javac -target 1.7 -bootclasspath /users/luoluorushi/documents/android-4.4.2/android.jar -cp libs/wup.jar:libs/mta-omg-sdk-2.0.5.jar:libs/videoad-sdk-1.1.9-mini.jar:libs/unityjar.jar @sources.list -Xlint:deprecation -Xlint:unchecked -d class 。其中-cp指定依赖的jar包，使用冒号分割
+3、将所有class文件打包成jar包，jar cvf VideoSdk.jar .  显示包内容则为 jar tvf VideoSdk.jar
+

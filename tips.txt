@@ -2,3 +2,4 @@
 2、编译整个文件夹命令:find src -name *.java > souces.list; javac @souces.list
 3、jar命令，显示包内容 jar tvf test.jar。 打包文件夹到jar包 jar cvf test.jar .
 4、环境变量，在前面增加$，在~/.bash_profile设置，之后source ~/.bash_profile
+5、网络代理设置http://txp-01.tencent.com/proxy.pac

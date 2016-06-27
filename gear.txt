@@ -1,0 +1,11 @@
+一、cardboard的头部跟踪替换为unity自带的vr模式
+1、cardboardmain，勾掉VR Mode Enabled
+2、head，勾掉 Track Rotation与 Track Position
+3、AppMain脚本，mcameratype设置为vt_sigle，setcameratype函数，所有分支设置VrModeEnabled为false
+二、选择对象模式改变
+4、在Head脚本动态移动selector等对象到main camera底下
+5、点选方式改变，在selector脚本下，update函数处做适配
+6、隐藏返回按钮
+
+
+<1>、单屏模式，播放界面显示在左下脚一小块。将camera的rect调整为0.01，0.01，0.99.0.99可以改好，原因不明！

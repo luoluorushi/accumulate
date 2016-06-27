@@ -1,1 +1,7 @@
 1、修改最近一次提交的信息，git commit --amend
+2、配置代理服务器，git config --global http.proxy url:port，与https.proxy
+	重置，git config --global --unset http.proxy
+3、gitignore，github有各种相关的ignore文件，https://github.com/github/gitignore
+4、忽略已经提交的文件，要先删除缓存，git rm --cached VRVideo/Temp
+5、git创建分支git branch，切换分支，git checkout branchname。在切换不同分支的时候，需要将修改提交或者将修改存到暂存栈里面，使用git stash。注意暂存，否则分支的修改会覆盖master的本地修改
+6、git恢复单个文件 git reset 9aa51d89799716aa68cff3f30c26f8815408e926 Default@2x.png

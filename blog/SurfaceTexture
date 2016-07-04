@@ -1,0 +1,1 @@
+SufaceView继承自View，与普通的View不同的是，他有自己的Surface。我们知道，一般的Activity包含的多个View会组成View hierachy的树形结构，只有最顶层的DecorView，也就是根节点视图，才是对WMS可见的。  SurfaceView自带一个Surface与DecorView一样，在WMS有对应的WindowState， 在SF中也有自己的Layer。也就是说，虽然它在App端仍在View hierachy，但是在Server端（WMS和SF）中，它与宿主窗口是分离的，这样的好处是对这个Surface的渲染可以放到单独的线程去做，渲染时可以有自己的GL context！

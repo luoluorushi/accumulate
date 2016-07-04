@@ -1,0 +1,3 @@
+1、一个线程要使用opengls渲染必须先初始化egl环境，要与其他线程共享纹理对象等，在创建context的时候要指定与其共享纹理的context，eglCreateContext(mainDisplay,config, theSharedContext, contextAttribute);
+2、在unity环境中如果要使用render需要另外开线程去做渲染！！否则unity界面会卡死
+3、由播放器通过surfaceTexture取出来的外部纹理oes无法直接作用于unity纹理上面，需要通过帧缓冲对象将外部纹理渲染到另外的纹理之中！

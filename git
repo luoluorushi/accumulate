@@ -8,3 +8,4 @@
 7、使用v进入可视模式，使用jklh移动光标选中内容，y复制，再使用p粘贴
 8、git log -p -3 filename查看文件最近三次的详细提交记录
 9、git log显示的修改记录对应的“上面”的哈希值！！
+10、删除本地所有未提交的修改，git reset --hard，将tracked的文件revert到前一个版本 git clean -xdf，删除所有untracked文件

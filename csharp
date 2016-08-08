@@ -1,0 +1,4 @@
+1、字符串分割string paramArray = mess.Split('&');
+2、字符串转化为整数，int.parse(str);
+3、循环遍历，跟c++一样。也可以使用foreache(int i in array)
+

@@ -1,0 +1,2 @@
+1、查看apk版本：aapt dump badging apk
+2、查看apk签名：jarsigner -verify -verbose -certs VRVideo.apk

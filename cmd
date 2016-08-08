@@ -7,3 +7,5 @@
 6、重命名  mv，重命名文件夹 mvdir
 7、Finder里面实现剪切，w+c，w+alt+v
 8、显示当前目录 echo $PWD
+9、在当前目录查找指定文件名
+	mdfind -onlyin . -name xxxx

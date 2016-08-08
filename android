@@ -1,0 +1,31 @@
+一、webvi>w使用
+1、打开在线网页失败，提示no_cache。需要增加<uses-permission android:name="android.permission.INTERNET"/>, mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE); 
+	2、显示内容不在webview而使用默认浏览器，mWebView.setWebViewClient(new WebViewClient() {
+	public boolean shouldOverrideUrlLoading(WebView view, String url) {
+		view.loadUrl(url);
+		return true;
+	}
+}	
+	3、加载本地html文件，在src/main目录下面新建assets文件夹放入html文件，使用mWebView.loadUrl("file:///android_asset/test.html")加载
+二、外部拉起app
+	1、在app的manifest文件中主Activity增加iten-filter
+	<intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <data android:scheme="tenvideovr" android:host="start.app"/>
+	</intent-filter>	
+	2、测试程序提示，net::err_unknown_url_scheme，检查webview设置，使用mWebView.setWebChromeClient(new WebChromeClient())，不要用setWebViewClient
+三、使用intent拉起activity
+	1、new intent的时候，第一个参数为action，第二个为具体的类。如果仅仅指定action，需要在被拉起的activity，增加inten-filter 
+	<intent-filter>
+                <action android:name="com.tencent.vrmovie.ACTION"/>
+                <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+	2、activity设置无标题，增加属性
+		android:theme="@android:style/Theme.NoTitleBar"
+
+四、签名与发布
+	1、apk发布之前对其签名，包名一致且签名一致才可升级成功，如果是包名一致而签名不一致，则任务是不同开发者，需要先删除以前的应用才能安装新应用。如果包名不一致则认为是不同的程序，可以同时安装

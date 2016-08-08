@@ -1,4 +1,4 @@
-命令行打包android jar包文件：
+一、命令行打包android jar包文件：
 1、将要编译的所有javac文件输入到sources.list find src -name *.java > sources.list
 2、javac编译命令, javac -target 1.7 -bootclasspath /users/luoluorushi/documents/android-4.4.2/android.jar -cp libs/wup.jar:libs/mta-omg-sdk-2.0.5.jar:libs/videoad-sdk-1.1.9-mini.jar:libs/unityjar.jar @sources.list -Xlint:deprecation -Xlint:unchecked -d class 。其中-cp指定依赖的jar包，使用冒号分割
 3、将所有class文件打包成jar包，jar cvf VideoSdk.jar .  显示包内容则为 jar tvf VideoSdk.jar
@@ -26,3 +26,5 @@ task clearJar(type: Delete) {
 
 makeJar.dependsOn(assembleRelease)
 在终端，工程目录下面执行 gradle makeJar
+五、语法知识
+1、static代码块， JVM加载类时会执行静态代码块，如果static代码块有多个，会按出现的先后顺序执行，每个代码只会被执行一次！
